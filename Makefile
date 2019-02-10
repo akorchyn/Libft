@@ -29,16 +29,16 @@ SRO = $(SRC:.c=.o)
 all: $(SRC) $(NAME)
 
 $(NAME): $(SRO)
-	ar rc $(NAME) $(SRO)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(SRO)
+	@ranlib $(NAME)
 
 %.o: %.c
-	$(CC) $(FLAGS) $< -o $@
+	@$(CC) $(FLAGS) $< -o $@
 
 clean:
-	/bin/rm -rf $(SRO)
+	@/bin/rm -rf $(SRO)
 
 fclean: clean
-	/bin/rm -rf $(NAME)
+	@/bin/rm -rf $(NAME)
 
 re: fclean all
