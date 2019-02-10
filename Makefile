@@ -29,8 +29,9 @@ SRO = $(SRC:.c=.o)
 all: $(SRC) $(NAME)
 
 $(NAME): $(SRO)
+	echo "\x1b[33mCompilation Library\x1b[0m"
 	@ar rc $(NAME) $(SRO)
-	@ranlib $(NAME)
+	@ranlib $(NAME) && echo "\x1b[32mSuccessful Compilation\x1b[0m"
 
 %.o: %.c
 	@$(CC) $(FLAGS) $< -o $@
