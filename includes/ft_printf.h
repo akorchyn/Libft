@@ -6,7 +6,7 @@
 /*   By: akorchyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 11:46:19 by akorchyn          #+#    #+#             */
-/*   Updated: 2018/11/13 11:46:20 by akorchyn         ###   ########.fr       */
+/*   Updated: 2019/03/08 16:10:44 by akorchyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <stdarg.h>
 # include <wchar.h>
 # include "libft.h"
+
+# ifdef __linux__
+
+typedef __uintmax_t uintmax_t;
+typedef __intmax_t intmax_t;
+
+# endif
+
 
 # define CHAR 0
 # define STRING 1
